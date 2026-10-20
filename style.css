@@ -1,19 +1,24 @@
-* { box-sizing: border-box; }
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   padding: 16px;
   font-family: Arial, sans-serif;
-  background: #f1f3f5;
-  color: #222;
+  background: #f5f5f0;
+  color: #292d29;
 }
 
-.title { margin: 0 0 12px; }
+.title {
+  margin: 0 0 12px;
+}
 
 .boxes {
   display: flex;
   gap: 16px;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
 }
 
 .box {
@@ -22,39 +27,51 @@ body {
   display: flex;
   flex-direction: column;
   padding: 14px;
-  background: #fff;
-  border: 1px solid #ccc;
+  background: #ffffff;
+  border: 1px solid #dedfd8;
   border-radius: 8px;
 }
 
-.box h3 { margin: 0 0 10px; }
+.box h3 {
+  margin: 0 0 10px;
+  color: #343a34;
+}
 
 textarea {
   flex: 1;
   width: 100%;
+  min-height: 300px;
   resize: none;
   padding: 10px;
   font-family: "Courier New", monospace;
   font-size: 15px;
-  border: 1px solid #bbb;
+  color: #292d29;
+  background: #fafaf7;
+  border: 1px solid #d8dbd2;
   border-radius: 6px;
 }
 
 #slide {
   flex: 1;
+  min-height: 300px;
   padding: 24px 32px;
-  border: 1px solid #bbb;
+  border: 1px solid #dedfd8;
   border-radius: 6px;
-  background: #fff;
+  background: #ffffff;
+  color: #292d29;
   overflow: auto;
 }
 
-#slide h1 { margin-top: 0; }
+#slide h1 {
+  margin-top: 0;
+  color: #343a34;
+}
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 12px;
   margin-top: 12px;
 }
@@ -63,28 +80,53 @@ button {
   padding: 8px 14px;
   border: none;
   border-radius: 6px;
-  background: #3b82f6;
-  color: #fff;
+  background: #788873;
+  color: #ffffff;
   cursor: pointer;
 }
 
-button:hover { background: #2563eb; }
-button:disabled { background: #aab4c0; cursor: not-allowed; }
+button:hover {
+  background: #626f5e;
+}
 
-#count { font-weight: bold; min-width: 50px; text-align: center; }
-#msg { color: green; font-size: 14px; }
+button:disabled {
+  background: #c6cbc3;
+  cursor: not-allowed;
+}
 
-/* ---------- presentation (full screen) mode ---------- */
+#count {
+  font-weight: bold;
+  min-width: 50px;
+  text-align: center;
+  color: #343a34;
+}
+
+#msg {
+  color: #62806a;
+  font-size: 14px;
+}
+
 #viewBox:fullscreen {
   padding: 24px;
   border-radius: 0;
+  background: #f5f5f0;
 }
 
-#viewBox:fullscreen h3 { display: none; }
+#viewBox:fullscreen h3 {
+  display: none;
+}
 
 #viewBox:fullscreen #slide {
   font-size: 2rem;
   padding: 48px 64px;
 }
 
-#viewBox:fullscreen #slide h1 { font-size: 3.5rem; }
+#viewBox:fullscreen #slide h1 {
+  font-size: 3.5rem;
+}
+
+@media (max-width: 700px) {
+  .boxes {
+    flex-direction: column;
+  }
+}
