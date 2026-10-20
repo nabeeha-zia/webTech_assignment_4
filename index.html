@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Markdown Slides</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2 class="title">Markdown Slides</h2>
+
+  <div class="boxes">
+    <!-- Section 1: write the markdown -->
+    <div class="box" id="editorBox">
+      <h3>Write here</h3>
+      <textarea id="text" oninput="update()" spellcheck="false"></textarea>
+      <div class="buttons">
+        <button onclick="newSlide()">New Slide</button>
+        <button onclick="save()">Save (Ctrl+S)</button>
+        <span id="msg"></span>
+      </div>
+    </div>
+
+    <!-- Section 2: view the slides -->
+    <div class="box" id="viewBox">
+      <h3>Slide</h3>
+      <div id="slide"></div>
+      <div class="buttons">
+        <button id="leftBtn" onclick="goLeft()">Left</button>
+        <span id="count"></span>
+        <button id="rightBtn" onclick="goRight()">Right</button>
+        <button id="fullBtn" onclick="fullScreen()">Full Screen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
